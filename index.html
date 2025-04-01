@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>易經卜卦解卦</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>易經卜卦解卦</h1>
+            <p>輸入您的問題與種子碼，獲取易經卦象解讀</p>
+        </header>
+        
+        <section id="input-section">
+            <div class="form-group">
+                <label for="question">您的問題：</label>
+                <textarea id="question" placeholder="請輸入您想詢問的問題..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="seed-code">種子碼：</label>
+                <input type="text" id="seed-code" placeholder="請輸入任意種子碼（數字、字母或符號）">
+                <p><small>種子碼用於生成卦象，可以是任意文字或數字。</small></p>
+            </div>
+            
+            <button id="generate-btn" class="btn">卜卦</button>
+        </section>
+        
+        <section id="result-container" class="hidden">
+            <h2>卦象結果</h2>
+            <div class="hexagram">
+                <div class="hexagram-name" id="hexagram-name">無</div>
+                <div class="hexagram-lines" id="hexagram-lines">
+                    <!-- 爻線將在 JavaScript 中動態生成 -->
+                </div>
+            </div>
+            
+            <div class="calculation" id="calculation"></div>
+            
+            <div id="interpretation-request" class="form-group">
+                <p>您已獲得卦象，是否希望獲取解卦？</p>
+                <button id="interpret-btn" class="btn">解卦</button>
+            </div>
+            
+            <div id="loading" class="loading hidden">
+                <i class="fas fa-spinner"></i> 正在解卦中，請稍候...
+            </div>
+            
+            <div id="interpretation-result" class="hidden">
+                <h2>卦象解讀</h2>
+                <div id="interpretation"></div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>© 2025 易經卜卦解卦網站 | 基於易經與人工智能技術</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

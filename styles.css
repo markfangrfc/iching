@@ -1,0 +1,231 @@
+:root {
+    --primary-color: #5d4037;
+    --secondary-color: #8d6e63;
+    --background-color: #f5f5dc;
+    --text-color: #3e2723;
+    --accent-color: #d7ccc8;
+    --yin-color: #222;
+    --yang-color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 20px;
+    position: relative;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+input[type="text"], 
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.hidden {
+    display: none;
+}
+
+#result-container {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid var(--accent-color);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.hexagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.hexagram-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.line {
+    width: 120px;
+    height: 15px;
+    margin: 5px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.yang {
+    background-color: var(--primary-color);
+}
+
+.yin {
+    display: flex;
+    justify-content: space-between;
+}
+
+.yin::before, 
+.yin::after {
+    content: '';
+    display: block;
+    width: 45%;
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.line-number {
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+.line-value {
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+.calculation {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+#interpretation {
+    white-space: pre-wrap;
+    line-height: 1.8;
+    padding: 20px;
+    background-color: var(--accent-color);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.loading i {
+    font-size: 24px;
+    animation: spin 1s linear infinite;
+    color: var(--primary-color);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--accent-color);
+    color: var(--secondary-color);
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    .line {
+        width: 100px;
+    }
+} 
